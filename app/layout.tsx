@@ -50,6 +50,9 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="de" className={`${nunito.variable} antialiased`}>
+      <head>
+        <GoogleAnalytics />
+      </head>
       <body className="flex min-h-dvh flex-col">
         <JsonLd data={[organization(), website(), mobileApp()]} />
         <a
@@ -63,7 +66,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           {children}
         </main>
         <Footer />
-        <GoogleAnalytics />
       </body>
     </html>
   );
