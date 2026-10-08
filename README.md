@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Klausi – Landingpage
 
-## Getting Started
-
-First, run the development server:
+Next.js-Website für die iPhone-App [Klausi](https://apps.apple.com/de/app/klausi-lernnotizen-zu-quiz/id6760970000).
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev     # http://localhost:3000
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Domain
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Canonicals, Sitemap, `robots.txt`, `llms.txt`, Open-Graph-Bilder und JSON-LD nutzen automatisch die
+Produktionsdomain von Vercel (`VERCEL_PROJECT_PRODUCTION_URL`). Nach dem Verbinden einer eigenen Domain
+einmal neu deployen, damit alle URLs umgestellt werden. Mit `NEXT_PUBLIC_SITE_URL` lässt sich die Domain
+fest überschreiben.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## SEO-Struktur
 
-## Learn More
+| Seite | Keyword-Fokus |
+| --- | --- |
+| `/` | KI Lernapp, Lernapp für Studenten |
+| `/quiz-aus-pdf-erstellen` | Quiz aus PDF erstellen |
+| `/ki-klausurvorbereitung` | KI Klausurvorbereitung, Klausurvorbereitung Studium, Prüfungsvorbereitung Studium, Probeklausur erstellen KI |
 
-To learn more about Next.js, take a look at the following resources:
+Spätere Artikel (erst nach diesen drei Seiten): Vorlesung zusammenfassen KI, Skript zusammenfassen KI,
+Übungsfragen aus Skript erstellen, Karteikarten aus PDF erstellen, Lernzettel erstellen KI.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Neue Seiten in `lib/site.ts` (`PAGES`) eintragen – Sitemap und `llms.txt` lesen von dort. `LAST_UPDATED` bei
+inhaltlichen Änderungen hochsetzen.
