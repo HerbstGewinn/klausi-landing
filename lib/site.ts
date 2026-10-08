@@ -25,6 +25,9 @@ export const APP_STORE_URL = `https://apps.apple.com/de/app/klausi-lernnotizen-z
 export const PRIVACY_URL = "https://www.notion.so/Datenschutzerkl-rung-Klausi-32b88543db9a8038825af7e521b9e6fc";
 export const TERMS_URL = "https://www.notion.so/Nutzungsbedingungen-Klausi-32b88543db9a809e8deef527ba296105";
 
+/** Public GA4 measurement ID. Safe to ship in the page; it only identifies this property. */
+export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "G-ZBW3XMEKJT";
+
 export const SITE_NAME = "Klausi";
 export const SITE_TAGLINE = "Foto machen, Quiz spielen, Prüfung rocken.";
 

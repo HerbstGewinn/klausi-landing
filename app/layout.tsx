@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Nunito } from "next/font/google";
 import { Footer } from "@/components/Footer";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { Header } from "@/components/Header";
 import { JsonLd, mobileApp, organization, website } from "@/lib/jsonld";
 import { APP_STORE_ID, IS_PRODUCTION_INDEXABLE, PAGES, SITE_NAME, SITE_URL } from "@/lib/site";
@@ -62,6 +63,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           {children}
         </main>
         <Footer />
+        <GoogleAnalytics />
       </body>
     </html>
   );
